@@ -67,6 +67,26 @@ Use these descriptions in GitHub repository settings.
 
 ## Keep / Improve / Archive
 
+## Remote-Only Repository Policy
+
+Several repositories exist on GitHub but are not cloned under `/home/daretechie/DevProject/GitHub`. Do not judge the portfolio from local folders alone.
+
+For remote-only repos:
+
+- clone only repos that can improve interview probability;
+- create an issue before larger cleanup work;
+- use a branch and PR for each repo change;
+- avoid spending time on tutorial forks, old training repos, or unrelated experiments unless they have deployment evidence.
+
+Remote-only repos worth inspecting first:
+
+| Repo | Why |
+|---|---|
+| `book-to-podcast-ai` | Has Railway deployment records, so it can serve as backend/app deployment proof after README cleanup |
+| `django-dynamic-app` | Needs inspection before deciding whether it is backend proof or archive material |
+| `policycraft-ai` | Needs inspection before deciding whether it has backend/deployment signal |
+| `jenkins-scm` | Either improve into a real Jenkins lab or hide/archive |
+
 ### KEEP
 
 These can support DevOps, systems, or backend roles.
