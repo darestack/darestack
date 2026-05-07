@@ -1,56 +1,52 @@
-# Adeleke Dare · DevOps & Backend Engineer
+# Adeleke Dare | DevOps & Infrastructure Engineer
 
-Lagos, Nigeria · [LinkedIn](https://www.linkedin.com/in/darestack/) · [Blog](https://dev.to/darestack)
+[![GitHub Actions](https://img.shields.io/badge/CI/CD-GitHub%20Actions-24292f?logo=githubactions&logoColor=white)](https://github.com/darestack?tab=repositories)
+[![AWS](https://img.shields.io/badge/Cloud-AWS-232f3e?logo=amazonwebservices&logoColor=white)](https://github.com/darestack/github-actions-ec2-pipeline)
+[![Docker](https://img.shields.io/badge/Containers-Docker-2496ed?logo=docker&logoColor=white)](https://github.com/darestack/glpi-ticketing-system)
+[![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi&logoColor=white)](https://github.com/darestack/api-reliability-suite)
+[![Linux](https://img.shields.io/badge/Systems-Linux-fcc624?logo=linux&logoColor=black)](https://github.com/darestack/devops-labs)
 
----
+Lagos, Nigeria | [LinkedIn](https://www.linkedin.com/in/darestack/) | [Blog](https://dev.to/darestack) | [Email](mailto:adelekedare2012@gmail.com)
 
-I build backend services and the infrastructure that keeps them running.
-Focus: automated deployments, observable systems, and environments that
-fail gracefully instead of silently.
+I build backend services and infrastructure labs that are easy to verify: CI/CD pipelines, AWS EC2 release automation, Dockerized IT support systems, and observable FastAPI services.
 
----
+Open to DevOps Engineer, IT Support / Systems, and Backend Infrastructure roles.
 
-## Featured Projects
+## 30-Second Scan
 
-| Project | What It Does | Stack |
+| Capability | Proof to Review |
+|---|---|
+| CI/CD release automation | [EC2 release pipeline](https://github.com/darestack/github-actions-ec2-pipeline) with build/test, tag-triggered deploy, PM2 reload, rollback script, and scheduled health checks |
+| Backend reliability | [API Reliability Suite](https://github.com/darestack/api-reliability-suite) with auth, rate limiting, readiness checks, Prometheus/Grafana/Jaeger, and circuit-breaker fallback |
+| Container pipeline quality gates | [GitHub Actions CI/CD demo](https://github.com/darestack/github-actions-cicd-demo) with Node matrix tests, ESLint, Trivy SARIF, Docker Buildx, and GHCR publishing |
+| IT systems operations | [GLPI ticketing system](https://github.com/darestack/glpi-ticketing-system) deployed with Docker Compose, MariaDB, persistent volumes, SLA categories, roles, and asset workflow notes |
+| Infrastructure breadth | [DevOps labs](https://github.com/darestack/devops-labs) covering Linux, AWS, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, and capstone deployments |
+
+## Selected Projects
+
+| Project | What It Demonstrates | Evidence Status |
 |---|---|---|
-| [api-reliability-suite](https://github.com/darestack/api-reliability-suite) | FastAPI service with JWT auth, Prometheus/Grafana SLO dashboards, circuit breaker, and AI-assisted log triage | Python - Docker - Prometheus - Grafana |
-| [github-actions-ec2-pipeline](https://github.com/darestack/github-actions-ec2-pipeline) | GitHub Actions builds and deploys a Node.js app to EC2 via SSH on push to main - zero manual steps | GitHub Actions - EC2 - Bash |
-| [github-actions-cicd-demo](https://github.com/darestack/github-actions-cicd-demo) | 5-stage pipeline: multi-version matrix, ESLint gate, Trivy security scan + SARIF to GitHub Code Scanning, Docker+GHCR, staged deploy | GitHub Actions - Docker - Trivy - GHCR |
-| [advanced-actions-demo](https://github.com/darestack/advanced-actions-demo) | OIDC-based AWS auth (no long-lived secrets), build matrix, reusable workflow_call, environment-targeted manual dispatch | GitHub Actions - AWS - OIDC - IAM |
-| [glpi-ticketing-system](https://github.com/darestack/glpi-ticketing-system) | Self-hosted IT helpdesk with assets, SLAs, and user roles - mirrors a real internal support environment | Docker - GLPI - MariaDB |
-| [CommitVigil](https://github.com/darestack/CommitVigil) | Webhook listener that flags risky commits (large diffs, secret patterns, main bypasses) and sends Slack alerts | Python - GitHub Webhooks |
-| [devops-labs](https://github.com/darestack/devops-labs) | 59 lab projects: Linux, AWS (multi-AZ HA), Docker/K8s CI/CD, Terraform modules, Prometheus/Grafana/Gatus | Bash - Docker - Terraform - Ansible - K8s |
+| [API Reliability Suite](https://github.com/darestack/api-reliability-suite) | FastAPI service with JWT auth, refresh-token rotation, rate limiting, readiness checks, structured logs, Prometheus metrics, Grafana dashboards, Jaeger tracing, and Redis-backed fallback behavior | CI badge, docs site, test suite, load-test report, Grafana and AI-debug screenshots |
+| [EC2 Release Pipeline](https://github.com/darestack/github-actions-ec2-pipeline) | GitHub Actions workflow that tests a Node/Express app, creates release tags, deploys to EC2 over SSH, reloads with PM2, and keeps rollback logic in `scripts/deploy.sh` | Workflow files, deploy script, scheduled health-check workflow |
+| [Container CI/CD Pipeline](https://github.com/darestack/github-actions-cicd-demo) | Node.js pipeline with Node 18/20 tests, linting, Trivy SARIF upload, Docker Buildx, GHCR image publishing, and simulated staging/production rollout steps | Workflow file is reviewable; real deployment target still needs to be connected |
+| [GLPI Helpdesk Lab](https://github.com/darestack/glpi-ticketing-system) | Self-hosted ITSM/helpdesk lab using GLPI, MariaDB, Docker Compose, named volumes, ticket categories, SLA policy notes, and support roles | Compose file plus implementation write-up; screenshots should be added |
+| [DevOps Labs](https://github.com/darestack/devops-labs) | Training portfolio with capstones for AWS HA WordPress, e-commerce CI/CD, and Terraform plus observability stack | Lab READMEs are indexed; best screenshots and metrics should be promoted to the root README |
 
----
+## Skills Mapped to Work
 
-## Skills
+| Skill Area | Projects |
+|---|---|
+| GitHub Actions, CI/CD, release automation | `github-actions-ec2-pipeline`, `github-actions-cicd-demo` |
+| AWS, EC2, IAM, deployment operations | `github-actions-ec2-pipeline`, `devops-labs` |
+| Docker and service deployment | `glpi-ticketing-system`, `github-actions-cicd-demo`, `api-reliability-suite` |
+| Monitoring and observability | `api-reliability-suite`, `devops-labs` |
+| Linux and systems administration | `devops-labs`, `glpi-ticketing-system` |
+| Backend infrastructure | `api-reliability-suite`, `github-actions-ec2-pipeline` |
 
-**Infrastructure & Automation**
-Linux - Bash - Docker - GitHub Actions - Jenkins - Terraform - Ansible - EC2 - S3 - VPC - IAM
+## Portfolio Standard
 
-**Observability**
-Prometheus - Grafana - Gatus - Jaeger - structured logging - alerting
-
-**Backend**
-Python - FastAPI - Node.js - Express.js - PostgreSQL - Redis - JWT
-
-**IT Operations**
-GLPI - ticketing workflows - asset management - SLA configuration - incident triage
-
----
-
-## Open Source
-
-- [astral-sh/ruff](https://github.com/astral-sh/ruff) - CLI docs: added --output-format option descriptions (pending merge)
-- [langchain-ai/langchain](https://github.com/langchain-ai/langchain) - Docstrings for classic QA chain loaders (pending merge)
-
----
+I keep the pinned portfolio small and evidence-based. Training projects are labeled as labs, simulated deployments are called out as simulations, and every major project should include at least one reviewable artifact: workflow run, screenshot, log output, dashboard, load-test result, or deployment note.
 
 ## Writing
 
-[dev.to/darestack](https://dev.to/darestack) - Articles on DevOps, Linux, and backend reliability
-
----
-
-*Open to DevOps Engineer, IT Systems, and Backend Infrastructure roles.*
+[dev.to/darestack](https://dev.to/darestack) - notes on DevOps, Linux, backend reliability, and hands-on infrastructure projects.
