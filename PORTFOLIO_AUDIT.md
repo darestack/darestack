@@ -21,8 +21,8 @@ The winning path is a small profile centered on:
 
 | Risk | Why It Hurts | Fix |
 |---|---|---|
-| `cloudcull` is pinned and over-claims heavily | Phrases like "Investor-Grade", "standard for multi-cloud cost optimization", "Sniper Agent", and "Kill-Switch" read like marketing without proof | Unpin now. Rewrite as a cost-audit CLI only if real cloud scans, IAM policy, dry-run output, and screenshots exist |
-| `CommitVigil` is pinned with blank repo description | README says GitHub webhook risk monitor, but code inspected locally looks closer to commitment/agent/reporting workflows | Unpin until README, code, tests, and description match one clear product |
+| `cloudcull` was pinned and over-claims heavily | Phrases like "Investor-Grade", "standard for multi-cloud cost optimization", "Sniper Agent", and "Kill-Switch" read like marketing without proof | Pinning risk is fixed. Keep unpinned unless it is rewritten as a cost-audit CLI with real cloud scans, IAM policy, dry-run output, and screenshots |
+| `CommitVigil` was pinned with a blank repo description | README says GitHub webhook risk monitor, but code inspected locally looks closer to commitment/agent/reporting workflows | Pinning risk is fixed. Keep unpinned until README, code, tests, and description match one clear product |
 | `github-actions-ec2-pipeline` had thousands of duplicate open health-check issues | A health check that spams issues looks operationally unsafe, even if the pipeline idea is good | Deduplicate alert issue creation, reduce schedule noise, and close historical duplicate issues after GitHub API rate limit resets |
 | Several project READMEs use "production" language without production evidence | Senior reviewers look for deployment logs, uptime, runbooks, monitoring, and failure handling | Replace broad claims with exact implementation details and evidence |
 | `advanced-actions-demo` claims OIDC AWS deploy, but local workflow shows a placeholder deploy with `id-token: write` commented out | This is the kind of mismatch a technical screener notices quickly | Archived during cleanup; unarchive only after real OIDC evidence exists |
@@ -43,7 +43,7 @@ Pin 5. Do not force a weak 6th pin.
 
 Optional 6th pin only after creating a new focused `terraform-aws-observability-stack` repo extracted from `devops-labs`.
 
-Unpin now:
+Already unpinned:
 
 - `cloudcull`
 - `CommitVigil`
@@ -98,22 +98,19 @@ Archive pass completed on 2026-05-07.
 - Permanent deletion was not performed because deletion is irreversible and should require an exact final repo list.
 - GitHub profile pins still need manual setup in the web UI; GitHub's available GraphQL mutations in this account did not expose a profile-pinning mutation.
 
-Current profile pins from GitHub API:
+Current profile pins from GitHub API after manual cleanup:
 
 - `api-reliability-suite`
-- `cloudcull`
-- `CommitVigil`
 - `devops-labs`
 - `github-actions-ec2-pipeline`
 - `glpi-ticketing-system`
+- `github-actions-cicd-demo`
 
-Manual pin change required:
+Manual pin change completed:
 
-- Unpin `cloudcull`.
-- Unpin `CommitVigil`.
-- Pin `github-actions-cicd-demo`.
-- Keep `api-reliability-suite`, `github-actions-ec2-pipeline`, `glpi-ticketing-system`, and `devops-labs`.
-- Use 5 pins total unless `django-dynamic-app` gains deployment evidence and becomes worth a 6th.
+- `cloudcull` and `CommitVigil` were unpinned.
+- `github-actions-cicd-demo` was pinned.
+- Keep 5 pins total unless `django-dynamic-app` gains deployment evidence and becomes worth a 6th.
 
 Remaining active repos after cleanup:
 
@@ -390,11 +387,10 @@ Why this is better:
 
 Evidence to add:
 
-- Link the DEV implementation article from the profile README and repo README.
-- GLPI login/dashboard screenshot.
-- Asset inventory screenshot.
-- Sample P1/P2/P3 ticket screenshots.
-- Screenshot showing MariaDB is not exposed publicly.
+- DEV implementation article is now linked from the profile README and repo README.
+- The article already includes GLPI dashboard, organization, security warning, sample ticket, ticket detail, reporting, and setup overview screenshots.
+- Copy the strongest redacted screenshots into `docs/screenshots/` so reviewers do not need to leave GitHub.
+- Add a screenshot or command output showing MariaDB is not exposed on a host port.
 
 ### `devops-labs`
 

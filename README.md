@@ -19,7 +19,7 @@ Open to DevOps Engineer, IT Support / Systems, and Backend Infrastructure roles.
 | CI/CD release automation | [EC2 release pipeline](https://github.com/darestack/github-actions-ec2-pipeline) with build/test, tag-triggered deploy, PM2 reload, rollback script, and scheduled health checks |
 | Backend reliability | [API Reliability Suite](https://github.com/darestack/api-reliability-suite) with auth, rate limiting, readiness checks, Prometheus/Grafana/Jaeger, and circuit-breaker fallback |
 | Container pipeline quality gates | [GitHub Actions CI/CD demo](https://github.com/darestack/github-actions-cicd-demo) with Node matrix tests, ESLint, Trivy SARIF, Docker Buildx, and GHCR publishing |
-| IT systems operations | [GLPI ticketing system](https://github.com/darestack/glpi-ticketing-system) deployed with Docker Compose, MariaDB, persistent volumes, SLA categories, roles, and asset workflow notes |
+| IT systems operations | [GLPI ticketing system](https://github.com/darestack/glpi-ticketing-system) with Docker Compose, MariaDB, persistent volumes, ITSM workflow notes, and a [documented implementation write-up](https://dev.to/darestack/from-zero-to-helpdesk-hero-building-an-enterprise-it-support-system-with-glpi-hpe) |
 | Infrastructure breadth | [DevOps labs](https://github.com/darestack/devops-labs) covering Linux, AWS, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, and capstone deployments |
 
 ## Selected Projects
@@ -29,7 +29,7 @@ Open to DevOps Engineer, IT Support / Systems, and Backend Infrastructure roles.
 | [API Reliability Suite](https://github.com/darestack/api-reliability-suite) | FastAPI service with JWT auth, refresh-token rotation, rate limiting, readiness checks, structured logs, Prometheus metrics, Grafana dashboards, Jaeger tracing, and Redis-backed fallback behavior | CI badge, docs site, test suite, load-test report, Grafana and AI-debug screenshots |
 | [EC2 Release Pipeline](https://github.com/darestack/github-actions-ec2-pipeline) | GitHub Actions workflow that tests a Node/Express app, creates release tags, deploys to EC2 over SSH, reloads with PM2, and keeps rollback logic in `scripts/deploy.sh` | Workflow files, deploy script, scheduled health-check workflow |
 | [Container CI/CD Pipeline](https://github.com/darestack/github-actions-cicd-demo) | Node.js pipeline with Node 22/24 tests, linting, Trivy SARIF upload, Docker Buildx, GHCR image publishing, and simulated staging/production rollout steps | Passing GitHub Actions workflow; real deployment target still needs to be connected |
-| [GLPI Helpdesk Lab](https://github.com/darestack/glpi-ticketing-system) | Self-hosted ITSM/helpdesk lab using GLPI, MariaDB, Docker Compose, named volumes, internal-only database networking, ticket categories, SLA policy notes, and support roles | Compose file plus [implementation write-up](https://dev.to/darestack/from-zero-to-helpdesk-hero-building-an-enterprise-it-support-system-with-glpi-hpe); screenshots should be added |
+| [GLPI Helpdesk Lab](https://github.com/darestack/glpi-ticketing-system) | Self-hosted ITSM/helpdesk lab using GLPI, MariaDB, Docker Compose, named volumes, internal-only database networking, ticket categories, SLA policy notes, and support roles | Compose file plus [implementation write-up](https://dev.to/darestack/from-zero-to-helpdesk-hero-building-an-enterprise-it-support-system-with-glpi-hpe) with dashboard, ticket, role, asset, and reporting screenshots; copy redacted screenshots into the repo next |
 | [DevOps Labs](https://github.com/darestack/devops-labs) | Training portfolio with capstones for AWS HA WordPress, e-commerce CI/CD, and Terraform plus observability stack | Lab READMEs are indexed; best screenshots and metrics should be promoted to the root README |
 
 ## Skills Mapped to Work
@@ -49,4 +49,5 @@ I keep the pinned portfolio small and evidence-based. Training projects are labe
 
 ## Writing
 
-[dev.to/darestack](https://dev.to/darestack) - notes on DevOps, Linux, backend reliability, and hands-on infrastructure projects.
+- [GLPI helpdesk implementation](https://dev.to/darestack/from-zero-to-helpdesk-hero-building-an-enterprise-it-support-system-with-glpi-hpe) - ITSM setup, web server troubleshooting, roles, assets, tickets, SLA notes, and reporting.
+- [dev.to/darestack](https://dev.to/darestack) - notes on DevOps, Linux, backend reliability, and hands-on infrastructure projects.
