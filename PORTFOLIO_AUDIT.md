@@ -217,7 +217,7 @@ These can support DevOps, systems, or backend roles.
 | `api-reliability-suite` | Strong backend + observability signal | CI run, Grafana screenshot, load-test summary, docs link |
 | `github-actions-ec2-pipeline` | Strong CI/CD and deployment signal | Latest CI matrix run, EC2 health endpoint screenshot, rollback log |
 | `github-actions-cicd-demo` | Strong pipeline-quality signal if wording is fixed | Actions run, SARIF screenshot, GHCR package link |
-| `glpi-ticketing-system` | Clear IT support / systems signal | GLPI dashboard screenshots, sample ticket workflow, SLA config screenshots |
+| `glpi-ticketing-system` | Clear IT support / systems signal | Operations runbook, backup/restore/smoke-test scripts, GLPI dashboard screenshots, sample ticket workflow, SLA config screenshots |
 | `devops-labs` | Good breadth and capstone index | Capstone screenshots, architecture diagrams, cost notes |
 
 ### IMPROVE
@@ -392,6 +392,7 @@ Why this is better:
 Evidence to add:
 
 - DEV implementation article is now linked from the profile README and repo README.
+- Operations runbook plus backup, restore, and smoke-test scripts were added on May 7, 2026.
 - The article already includes GLPI dashboard, organization, security warning, sample ticket, ticket detail, reporting, and setup overview screenshots.
 - Copy the strongest redacted screenshots into `docs/screenshots/` so reviewers do not need to leave GitHub.
 - Add a screenshot or command output showing MariaDB is not exposed on a host port.
