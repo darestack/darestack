@@ -23,7 +23,7 @@ The winning path is a small profile centered on:
 |---|---|---|
 | `cloudcull` was pinned and over-claims heavily | Phrases like "Investor-Grade", "standard for multi-cloud cost optimization", "Sniper Agent", and "Kill-Switch" read like marketing without proof | Pinning risk is fixed. Keep unpinned unless it is rewritten as a cost-audit CLI with real cloud scans, IAM policy, dry-run output, and screenshots |
 | `CommitVigil` was pinned with a blank repo description | README says GitHub webhook risk monitor, but code inspected locally looks closer to commitment/agent/reporting workflows | Pinning risk is fixed. Keep unpinned until README, code, tests, and description match one clear product |
-| `github-actions-ec2-pipeline` had thousands of duplicate open health-check issues | A health check that spams issues looks operationally unsafe, even if the pipeline idea is good | Deduplicate alert issue creation, reduce schedule noise, and close historical duplicate issues after GitHub API rate limit resets |
+| `github-actions-ec2-pipeline` had thousands of duplicate open health-check issues | A health check that spams issues looks operationally unsafe, even if the pipeline idea is good | Deduplicate alert issue creation is implemented; continue closing historical duplicate issues after GitHub API rate limit resets |
 | Several project READMEs use "production" language without production evidence | Senior reviewers look for deployment logs, uptime, runbooks, monitoring, and failure handling | Replace broad claims with exact implementation details and evidence |
 | `advanced-actions-demo` claims OIDC AWS deploy, but local workflow shows a placeholder deploy with `id-token: write` commented out | This is the kind of mismatch a technical screener notices quickly | Archived during cleanup; unarchive only after real OIDC evidence exists |
 | `github-actions-cicd-demo` used outdated Node runtime references | Earlier docs/workflow referenced EOL Node lines and did not wait for security scanning before build | Updated to Node 22/24, refreshed action versions, made build depend on security scan, and kept deploy stage explicitly simulated |
@@ -36,7 +36,7 @@ Pin 5. Do not force a weak 6th pin.
 | Rank | Repository | Purpose | Action |
 |---|---|---|---|
 | 1 | `api-reliability-suite` | Backend reliability, observability, auth, rate limiting, readiness checks | KEEP; add more result metrics and keep README modest |
-| 2 | `github-actions-ec2-pipeline` | Real release automation to EC2 with rollback and health checks | KEEP; add deployment screenshots and workflow run links |
+| 2 | `github-actions-ec2-pipeline` | Controlled release automation to EC2 with rollback and health checks | KEEP; latest CI matrix run is linked; add live EC2 deployment screenshots and rollback logs |
 | 3 | `github-actions-cicd-demo` | CI/CD quality gates, Trivy SARIF, Docker Buildx, GHCR | KEEP after README correction; label deploy stage as simulated |
 | 4 | `glpi-ticketing-system` | IT support / systems operations proof | KEEP; add GLPI screenshots and sample tickets/assets |
 | 5 | `devops-labs` | Breadth across Linux, AWS, Docker, Kubernetes, Terraform, Ansible, monitoring | KEEP as lab index; promote only capstones in profile |
@@ -55,7 +55,7 @@ Use these descriptions in GitHub repository settings.
 | Current Repo | Suggested Name | Suggested Description |
 |---|---|---|
 | `api-reliability-suite` | keep | FastAPI reliability reference with JWT auth, rate limiting, readiness checks, Prometheus/Grafana/Jaeger, circuit-breaker fallback, and tested LLM log triage. |
-| `github-actions-ec2-pipeline` | keep or `ec2-release-pipeline` | GitHub Actions pipeline for a Node/Express app: test, tag, deploy to EC2 via SSH/PM2, rollback with atomic symlinks, and scheduled health checks. |
+| `github-actions-ec2-pipeline` | keep or `ec2-release-pipeline` | GitHub Actions pipeline for a Node/Express app: Node 22/24 CI, controlled manual/tag deploy to EC2 via SSH/PM2, rollback with atomic symlinks, and scheduled health checks. |
 | `github-actions-cicd-demo` | `github-actions-container-pipeline` | Node.js CI/CD lab using GitHub Actions matrix tests on Node 22/24, ESLint, Trivy SARIF, Docker Buildx, GHCR publishing, and simulated staged deploys. |
 | `glpi-ticketing-system` | `docker-glpi-helpdesk-lab` | Docker Compose GLPI helpdesk lab with MariaDB, persistent volumes, internal networking, and ITSM workflow evidence. |
 | `devops-labs` | keep | Indexed DevOps lab portfolio covering Linux, AWS, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, and capstone infrastructure builds. |
@@ -215,7 +215,7 @@ These can support DevOps, systems, or backend roles.
 | Repo | Why It Stays | Required Evidence |
 |---|---|---|
 | `api-reliability-suite` | Strong backend + observability signal | CI run, Grafana screenshot, load-test summary, docs link |
-| `github-actions-ec2-pipeline` | Strong CI/CD and deployment signal | Successful workflow run, EC2 health endpoint screenshot, rollback log |
+| `github-actions-ec2-pipeline` | Strong CI/CD and deployment signal | Latest CI matrix run, EC2 health endpoint screenshot, rollback log |
 | `github-actions-cicd-demo` | Strong pipeline-quality signal if wording is fixed | Actions run, SARIF screenshot, GHCR package link |
 | `glpi-ticketing-system` | Clear IT support / systems signal | GLPI dashboard screenshots, sample ticket workflow, SLA config screenshots |
 | `devops-labs` | Good breadth and capstone index | Capstone screenshots, architecture diagrams, cost notes |
@@ -329,18 +329,21 @@ Evidence to add:
 
 Before:
 
-- "Zero manual steps" and "zero-downtime deploy" are strong claims.
+- "Zero manual steps", "zero-downtime deploy", and automatic tag/deploy language are strong claims.
+- The old auto-tag job depended on `REPO_ACCESS_TOKEN` and failed with bad credentials on May 7, 2026.
 
 After:
 
-- "GitHub Actions tests, tags, and deploys a Node/Express app to EC2 using SSH, PM2 reload, timestamped releases, rollback script, and scheduled health checks."
+- "GitHub Actions tests a Node/Express app on Node 22/24 and deploys to EC2 from a manual run or pushed `v*` tag using SSH, PM2 reload, timestamped releases, rollback script, and scheduled health checks."
 
 Why this is better:
 
 - It explains the implementation without claiming uptime that has not been measured.
+- It removes a brittle PAT-backed auto-tag path and avoids accidental EC2 deploys from routine CI commits.
 
 Evidence to add:
 
+- Latest CI matrix run passed on May 7, 2026: https://github.com/darestack/github-actions-ec2-pipeline/actions/runs/25493804477
 - Successful `release.yml` run screenshot.
 - EC2 `/api/health` screenshot.
 - PM2 status screenshot.
