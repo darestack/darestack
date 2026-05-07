@@ -23,7 +23,7 @@ The winning path is a small profile centered on:
 |---|---|---|
 | `cloudcull` was pinned and over-claims heavily | Phrases like "Investor-Grade", "standard for multi-cloud cost optimization", "Sniper Agent", and "Kill-Switch" read like marketing without proof | Pinning risk is fixed. Keep unpinned unless it is rewritten as a cost-audit CLI with real cloud scans, IAM policy, dry-run output, and screenshots |
 | `CommitVigil` was pinned with a blank repo description | README says GitHub webhook risk monitor, but code inspected locally looks closer to commitment/agent/reporting workflows | Pinning risk is fixed. Keep unpinned until README, code, tests, and description match one clear product |
-| `github-actions-ec2-pipeline` had thousands of duplicate open health-check issues | A health check that spams issues looks operationally unsafe, even if the pipeline idea is good | Deduplicate alert issue creation is implemented; continue closing historical duplicate issues after GitHub API rate limit resets |
+| `github-actions-ec2-pipeline` had thousands of duplicate open health-check issues | A health check that spams issues looks operationally unsafe, even if the pipeline idea is good | Deduplicate alert issue creation is implemented; stale duplicate issues are now closed |
 | Several project READMEs use "production" language without production evidence | Senior reviewers look for deployment logs, uptime, runbooks, monitoring, and failure handling | Replace broad claims with exact implementation details and evidence |
 | `advanced-actions-demo` claims OIDC AWS deploy, but local workflow shows a placeholder deploy with `id-token: write` commented out | This is the kind of mismatch a technical screener notices quickly | Archived during cleanup; unarchive only after real OIDC evidence exists |
 | `github-actions-cicd-demo` used outdated Node runtime references | Earlier docs/workflow referenced EOL Node lines and did not wait for security scanning before build | Updated to Node 22/24, refreshed action versions, made build depend on security scan, and kept deploy stage explicitly simulated |
@@ -48,6 +48,22 @@ Already unpinned:
 - `cloudcull`
 - `CommitVigil`
 
+## Rejected Recommendations From External Notes
+
+The pasted "v2 deep audit" contains useful reminders about `devops-training` / `devops-labs`, but several recommendations are not valid for the current public portfolio.
+
+Do not implement these without new evidence:
+
+| Recommendation | Why It Is Rejected |
+|---|---|
+| Pin `CommitVigil` | Current README/code direction does not yet prove a clean GitHub risky-commit webhook product. Keep unpinned until it has one clear scope, tests, sample webhook payloads, and alert evidence. |
+| Pin `cloudcull` | The repo still needs a credibility rewrite and real provider scan evidence. Pinning it now would reintroduce over-claim risk. |
+| Promote `advanced-actions-demo` | Local workflow inspection showed placeholder AWS/OIDC deployment behavior. It was archived; unarchive only after real OIDC role assumption and deploy evidence exist. |
+| Describe `github-actions-cicd-demo` as Node 12/14/16 | Those Node lines are obsolete for a 2026 portfolio. The repo was updated to Node 22/24 and current action versions. |
+| Describe `github-actions-ec2-pipeline` as zero-manual auto-deploy on every push | The old auto-tag job failed with bad credentials. The credible version is controlled manual/tag deployment, with CI running on push. |
+| Treat `devops-labs` capstone 6 as fully implemented inside the capstone folder | Terraform implementation files currently live in mini-project folders; the capstone folder is still more of a write-up and needs dashboard/config exports promoted. |
+| Keep OSS forks visible as signal without merged contributions | Fork visibility is not useful unless there are accepted or clearly linked PRs. Do not use forks as portfolio evidence until contribution links exist. |
+
 ## Suggested Repo Names and Descriptions
 
 Use these descriptions in GitHub repository settings.
@@ -58,7 +74,7 @@ Use these descriptions in GitHub repository settings.
 | `github-actions-ec2-pipeline` | keep or `ec2-release-pipeline` | GitHub Actions pipeline for a Node/Express app: Node 22/24 CI, controlled manual/tag deploy to EC2 via SSH/PM2, rollback with atomic symlinks, and scheduled health checks. |
 | `github-actions-cicd-demo` | `github-actions-container-pipeline` | Node.js CI/CD lab using GitHub Actions matrix tests on Node 22/24, ESLint, Trivy SARIF, Docker Buildx, GHCR publishing, and simulated staged deploys. |
 | `glpi-ticketing-system` | `docker-glpi-helpdesk-lab` | Docker Compose GLPI helpdesk lab with MariaDB, persistent volumes, internal networking, and ITSM workflow evidence. |
-| `devops-labs` | keep | Indexed DevOps lab portfolio covering Linux, AWS, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, and capstone infrastructure builds. |
+| `devops-labs` | keep | Curated DevOps lab evidence map covering AWS, Docker, GitHub Actions, Terraform, Ansible, Kubernetes, Prometheus, Grafana, and systems administration. |
 | `advanced-actions-demo` | archived; `github-actions-oidc-lab` only after fix | GitHub Actions workflow-pattern lab with reusable workflows, Node matrix tests, environment-gated deploys, and real AWS OIDC role assumption. |
 | `CommitVigil` | `commit-risk-webhook` only after rewrite | FastAPI webhook service that validates GitHub events, scans commit risk signals, queues background checks, and sends Slack alerts. |
 | `cloudcull` | `cloud-cost-audit-cli` only after rewrite | CLI-first cloud cost audit tool with dry-run reports, provider adapters, and safe remediation notes. |
@@ -348,7 +364,7 @@ Evidence to add:
 - EC2 `/api/health` screenshot.
 - PM2 status screenshot.
 - Rollback log from a failed deploy test.
-- Continue closing historical duplicate `Application Health Check Failed` issues after the GitHub API rate limit resets. Cleanup reduced the count from 5,506 to at least 1,036 before rate limiting.
+- Historical duplicate `Application Health Check Failed` issues are closed as of May 7, 2026; `gh issue list` reports 0 open matching issues after the dedupe workflow fix.
 
 ### `github-actions-cicd-demo`
 
