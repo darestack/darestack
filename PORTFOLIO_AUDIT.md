@@ -25,7 +25,7 @@ The winning path is a small profile centered on:
 | `CommitVigil` is pinned with blank repo description | README says GitHub webhook risk monitor, but code inspected locally looks closer to commitment/agent/reporting workflows | Unpin until README, code, tests, and description match one clear product |
 | `github-actions-ec2-pipeline` had thousands of duplicate open health-check issues | A health check that spams issues looks operationally unsafe, even if the pipeline idea is good | Deduplicate alert issue creation, reduce schedule noise, and close historical duplicate issues after GitHub API rate limit resets |
 | Several project READMEs use "production" language without production evidence | Senior reviewers look for deployment logs, uptime, runbooks, monitoring, and failure handling | Replace broad claims with exact implementation details and evidence |
-| `advanced-actions-demo` claims OIDC AWS deploy, but local workflow shows a placeholder deploy with `id-token: write` commented out | This is the kind of mismatch a technical screener notices quickly | Move to IMPROVE; implement real OIDC or describe it as a workflow-pattern lab |
+| `advanced-actions-demo` claims OIDC AWS deploy, but local workflow shows a placeholder deploy with `id-token: write` commented out | This is the kind of mismatch a technical screener notices quickly | Archived during cleanup; unarchive only after real OIDC evidence exists |
 | `github-actions-cicd-demo` README and workflow disagree | README says Node 12/14/16 and hard lint gate; workflow uses Node 18/20 and SARIF lint upload has `continue-on-error: true` | Update README to match workflow, or change workflow and prove it |
 | Too many public repos compete for attention | Recruiters scan pins and recent repos first; unrelated AI/product/course repos blur the DevOps story | Archive, private, or leave unpinned; do not link from profile README |
 
@@ -41,10 +41,7 @@ Pin 5. Do not force a weak 6th pin.
 | 4 | `glpi-ticketing-system` | IT support / systems operations proof | KEEP; add GLPI screenshots and sample tickets/assets |
 | 5 | `devops-labs` | Breadth across Linux, AWS, Docker, Kubernetes, Terraform, Ansible, monitoring | KEEP as lab index; promote only capstones in profile |
 
-Optional 6th pin only after fixing:
-
-- `advanced-actions-demo` after real OIDC is implemented; or
-- a new focused `terraform-aws-observability-stack` repo extracted from `devops-labs`.
+Optional 6th pin only after creating a new focused `terraform-aws-observability-stack` repo extracted from `devops-labs`.
 
 Unpin now:
 
@@ -62,7 +59,7 @@ Use these descriptions in GitHub repository settings.
 | `github-actions-cicd-demo` | `github-actions-container-pipeline` | Node.js CI/CD lab using GitHub Actions matrix tests, ESLint, Trivy SARIF, Docker Buildx, GHCR publishing, and simulated staged deploys. |
 | `glpi-ticketing-system` | `docker-glpi-helpdesk-lab` | Dockerized GLPI helpdesk lab with MariaDB, persistent volumes, SLA categories, user roles, and asset workflow notes. |
 | `devops-labs` | keep | Indexed DevOps lab portfolio covering Linux, AWS, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, and capstone infrastructure builds. |
-| `advanced-actions-demo` | `github-actions-oidc-lab` after fix | GitHub Actions workflow-pattern lab with reusable workflows, Node matrix tests, environment-gated deploys, and real AWS OIDC role assumption. |
+| `advanced-actions-demo` | archived; `github-actions-oidc-lab` only after fix | GitHub Actions workflow-pattern lab with reusable workflows, Node matrix tests, environment-gated deploys, and real AWS OIDC role assumption. |
 | `CommitVigil` | `commit-risk-webhook` only after rewrite | FastAPI webhook service that validates GitHub events, scans commit risk signals, queues background checks, and sends Slack alerts. |
 | `cloudcull` | `cloud-cost-audit-cli` only after rewrite | CLI-first cloud cost audit tool with dry-run reports, provider adapters, and safe remediation notes. |
 
@@ -85,12 +82,35 @@ Remote-only repos worth inspecting first:
 |---|---|
 | `book-to-podcast-ai` | IMPROVE | Has Railway deployment records, so it can serve as backend/app deployment proof after README cleanup |
 | `django-dynamic-app` | IMPROVE | Has Django, Docker, and Terraform/ECS material; useful only if described as a lab until deployment evidence is added |
-| `policycraft-ai` | IMPROVE LOW PRIORITY | Data-app export with broken hosted link; useful only if packaged as a reproducible Python/Dash project |
+| `policycraft-ai` | ARCHIVED AFTER README CLEANUP | Data-app export with broken hosted link; useful only if packaged as a reproducible Python/Dash project |
 | `jenkins-scm` | DELETE OR ARCHIVE | One README only, typo in description, no Jenkinsfile, no pipeline evidence |
 
 ## Delete / Archive Queue
 
 Use this as the removal queue before touching GitHub settings. The goal is not to keep every learning artifact; the goal is to make the public profile look intentional.
+
+### Archive Execution Status
+
+Archive pass completed on 2026-05-07.
+
+- Active public repos after cleanup: 11.
+- Archived repos after cleanup: 64.
+- Permanent deletion was not performed because deletion is irreversible and should require an exact final repo list.
+- GitHub profile pins still need manual setup in the web UI; GitHub's available GraphQL mutations in this account did not expose a profile-pinning mutation.
+
+Remaining active repos after cleanup:
+
+- `api-reliability-suite`
+- `github-actions-ec2-pipeline`
+- `github-actions-cicd-demo`
+- `glpi-ticketing-system`
+- `devops-labs`
+- `darestack`
+- `django-dynamic-app`
+- `book-to-podcast-ai`
+- `CommitVigil`
+- `cloudcull`
+- `warp-support-case-lab`
 
 ### Delete Now If You Do Not Need The History
 
@@ -160,7 +180,7 @@ These may contain personal work, but they currently distract from the target rol
 
 ### Do Not Delete Yet
 
-These either support the current portfolio directly or may be useful after cleanup.
+These either support the current portfolio directly or may be useful after cleanup. This list now reflects the repos left active after the archive pass.
 
 - `darestack`
 - `api-reliability-suite`
@@ -168,17 +188,11 @@ These either support the current portfolio directly or may be useful after clean
 - `github-actions-cicd-demo`
 - `glpi-ticketing-system`
 - `devops-labs`
-- `advanced-actions-demo`
 - `book-to-podcast-ai`
 - `django-dynamic-app`
-- `policycraft-ai`
 - `CommitVigil`
 - `cloudcull`
-- `100-days-of-devops-xfusioncorp`
 - `warp-support-case-lab`
-- `greenwood-library-website`
-- `MarketPeak_Ecommerce`
-- `ecommerce-platform`
 
 ### KEEP
 
@@ -198,15 +212,15 @@ These may be useful later, but should not lead the profile today.
 
 | Repo | Problem | Fix |
 |---|---|---|
-| `advanced-actions-demo` | Claims OIDC/AWS but deploy workflow is placeholder | Implement real OIDC trust policy and AWS action, or rewrite as placeholder pattern lab |
+| `advanced-actions-demo` | Claims OIDC/AWS but deploy workflow is placeholder | Archived; unarchive only after implementing real OIDC trust policy and AWS action |
 | `CommitVigil` | README and code direction are not aligned; repo description is blank | Decide one product: GitHub risk webhook or commitment extractor. Delete or move unrelated agent/sales features |
 | `cloudcull` | Over-marketed and too broad for current proof | Rewrite as a dry-run cost audit CLI; remove multi-cloud/AI/kill-switch claims unless demonstrated |
-| `100-days-of-devops-xfusioncorp` | Curriculum repo can show consistency but is not high-signal enough to pin | Keep public, but link only from `devops-labs` if organized |
+| `100-days-of-devops-xfusioncorp` | Curriculum repo can show consistency but is not high-signal enough to pin | Archived; keep the best tasks represented through `devops-labs` |
 | `jenkins-scm` | Title/description feels beginner-level and repo contains only a README | Delete/archive unless you want to rebuild a full Jenkinsfile lab |
 | `warp-support-case-lab` | Useful troubleshooting angle, but not central to DevOps hiring scan | Keep unpinned; add incident format, logs, root cause, resolution |
 | `book-to-podcast-ai` | App is outside the main DevOps track, but it has real Railway deployment records | Keep unpinned; reposition as backend/app deployment proof with Railway deployment dates, live URL, runtime config, and screenshots |
 | `medicalrag`, `verimed`, `clinician` | Backend/AI healthcare work may distract from DevOps unless deployed and documented | Move to backend section only if live, tested, and infrastructure is clear |
-| `ecommerce-platform`, `MarketPeak_Ecommerce`, `greenwood-library-website` | Frontend/e-commerce work is not aligned with the target roles | Keep unpinned; use only if demonstrating deployment pipeline |
+| `ecommerce-platform`, `MarketPeak_Ecommerce`, `greenwood-library-website` | Frontend/e-commerce work is not aligned with the target roles | Archived; unarchive only if they demonstrate deployment or infrastructure work |
 
 ### ARCHIVE OR HIDE FROM RECRUITER VIEW
 
@@ -538,7 +552,7 @@ Do not stuff every keyword into every repo. Each pinned repo should own one capa
 2. Pin only the recommended 5 repos.
 3. Add GitHub descriptions from the table above.
 4. Fix `github-actions-cicd-demo` README/workflow mismatch.
-5. Rewrite or unpin `advanced-actions-demo`.
+5. Keep `advanced-actions-demo` archived until real OIDC evidence exists.
 6. Add screenshots to `api-reliability-suite`, `github-actions-ec2-pipeline`, and `glpi-ticketing-system`.
 7. Archive or hide the listed low-signal repos from the recruiter path.
 
