@@ -436,6 +436,7 @@ Evidence to add:
 - Architecture diagrams for each capstone.
 - Cost estimate or teardown note for AWS labs.
 - Terraform plan/apply screenshot with sensitive values hidden.
+- Capstone wording cleanup completed on May 7, 2026: removed unsupported `95%` monitoring impact claims, broken capstone 5 screenshot links, and production/enterprise over-claims from the main narrative and key capstone READMEs.
 
 ### `advanced-actions-demo`
 
