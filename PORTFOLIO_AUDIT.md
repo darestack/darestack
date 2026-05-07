@@ -218,7 +218,7 @@ These can support DevOps, systems, or backend roles.
 | `github-actions-ec2-pipeline` | Strong CI/CD and deployment signal | Latest CI matrix run, EC2 health endpoint screenshot, rollback log |
 | `github-actions-cicd-demo` | Strong pipeline-quality signal if wording is fixed | Actions run, SARIF screenshot, GHCR package link |
 | `glpi-ticketing-system` | Clear IT support / systems signal | Operations runbook, backup/restore/smoke-test scripts, GLPI dashboard screenshots, sample ticket workflow, SLA config screenshots |
-| `devops-labs` | Good breadth and capstone index | Capstone screenshots, architecture diagrams, cost notes |
+| `devops-labs` | Good breadth and curated evidence map | Root evidence map, capstone screenshots, architecture diagrams, cost notes |
 
 ### IMPROVE
 
@@ -407,10 +407,12 @@ Before:
 After:
 
 - "DevOps lab index with three highlighted capstones: AWS HA WordPress, e-commerce CI/CD, and Terraform plus observability."
+- Root README now separates direct implementation evidence from gaps, including the fact that Terraform source files live in mini-project folders while the observability capstone still needs dashboard/config exports promoted.
 
 Why this is better:
 
 - It turns a large curriculum repo into a curated evidence map.
+- It avoids implying that every capstone folder already contains all code and runtime artifacts.
 
 Evidence to add:
 
