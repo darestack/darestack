@@ -1,6 +1,6 @@
-# Adeleke Dare  - DevOps & Backend Engineer
+# Adeleke Dare · DevOps & Backend Engineer
 
-Lagos, Nigeria - [LinkedIn](https://www.linkedin.com/in/YOUR_HANDLE) - [Blog](https://dev.to/darestack)
+Lagos, Nigeria · [LinkedIn](https://www.linkedin.com/in/darestack/) · [Blog](https://dev.to/darestack)
 
 ---
 
