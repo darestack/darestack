@@ -98,6 +98,23 @@ Archive pass completed on 2026-05-07.
 - Permanent deletion was not performed because deletion is irreversible and should require an exact final repo list.
 - GitHub profile pins still need manual setup in the web UI; GitHub's available GraphQL mutations in this account did not expose a profile-pinning mutation.
 
+Current profile pins from GitHub API:
+
+- `api-reliability-suite`
+- `cloudcull`
+- `CommitVigil`
+- `devops-labs`
+- `github-actions-ec2-pipeline`
+- `glpi-ticketing-system`
+
+Manual pin change required:
+
+- Unpin `cloudcull`.
+- Unpin `CommitVigil`.
+- Pin `github-actions-cicd-demo`.
+- Keep `api-reliability-suite`, `github-actions-ec2-pipeline`, `glpi-ticketing-system`, and `devops-labs`.
+- Use 5 pins total unless `django-dynamic-app` gains deployment evidence and becomes worth a 6th.
+
 Remaining active repos after cleanup:
 
 - `api-reliability-suite`
