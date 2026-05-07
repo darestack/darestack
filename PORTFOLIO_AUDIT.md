@@ -91,6 +91,7 @@ These may be useful later, but should not lead the profile today.
 | `100-days-of-devops-xfusioncorp` | Curriculum repo can show consistency but is not high-signal enough to pin | Keep public, but link only from `devops-labs` if organized |
 | `jenkins-scm` | Title/description feels beginner-level | Either upgrade to a Jenkinsfile lab with screenshots or archive |
 | `warp-support-case-lab` | Useful troubleshooting angle, but not central to DevOps hiring scan | Keep unpinned; add incident format, logs, root cause, resolution |
+| `book-to-podcast-ai` | App is outside the main DevOps track, but it has real Railway deployment records | Keep unpinned; reposition as backend/app deployment proof with Railway deployment dates, live URL, runtime config, and screenshots |
 | `medicalrag`, `verimed`, `clinician` | Backend/AI healthcare work may distract from DevOps unless deployed and documented | Move to backend section only if live, tested, and infrastructure is clear |
 | `ecommerce-platform`, `MarketPeak_Ecommerce`, `greenwood-library-website` | Frontend/e-commerce work is not aligned with the target roles | Keep unpinned; use only if demonstrating deployment pipeline |
 
@@ -137,7 +138,6 @@ Forks and external tutorials:
 Low-alignment product experiments unless they have strong deployment evidence:
 
 - `ai-startup-website`
-- `book-to-podcast-ai`
 - `customer-service-chatbot`
 - `CustomerAgent`
 - `django-dynamic-app`
@@ -294,6 +294,35 @@ Evidence to add:
 - IAM trust policy snippet.
 - `aws-actions/configure-aws-credentials@v4` in workflow.
 - Successful workflow run with AWS account ID masked.
+
+### `book-to-podcast-ai`
+
+Before:
+
+- Treated as a low-alignment product experiment.
+- Deployment proof was unclear because it was initially remembered as Render.
+
+After:
+
+- "Flask app that converts uploaded books into podcast-style audio; deployed to Railway with production deployment records."
+
+Why this is better:
+
+- It uses the real platform and keeps the project in a modest backend/app-deployment lane instead of pretending it is a DevOps centerpiece.
+
+Evidence found:
+
+- GitHub deployment records show Railway production deployments.
+- First production deployment found: March 27, 2025 at 07:18 UTC.
+- Latest production deployment found: May 18, 2025 at 20:22 UTC, updated May 18, 2025 at 21:37 UTC.
+
+Evidence to add:
+
+- Railway live URL or screenshot.
+- Deployment settings screenshot with sensitive values hidden.
+- Runtime/start command and environment variable notes.
+- A short README section: "Deployment: Railway".
+- Health check or manual smoke-test screenshot after deploy.
 
 ### `CommitVigil`
 
