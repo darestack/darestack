@@ -319,10 +319,11 @@ Why this is better:
 
 Evidence to add:
 
+- Latest CI, Security, and Docs run links are now linked from the profile README.
 - Screenshot of Grafana dashboard.
-- Latest CI run link.
 - `loadtests/results/latest-summary.json`.
 - Screenshot or log from `/ready`, `/slo/report`, and a circuit-breaker fallback case.
+- Security workflow was fixed on May 7, 2026 by patching runtime OpenSSL packages and updating `Mako` and `python-multipart` to scanner-reported fixed versions.
 
 ### `github-actions-ec2-pipeline`
 
