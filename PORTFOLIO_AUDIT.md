@@ -57,7 +57,7 @@ Use these descriptions in GitHub repository settings.
 | `api-reliability-suite` | keep | FastAPI reliability reference with JWT auth, rate limiting, readiness checks, Prometheus/Grafana/Jaeger, circuit-breaker fallback, and tested LLM log triage. |
 | `github-actions-ec2-pipeline` | keep or `ec2-release-pipeline` | GitHub Actions pipeline for a Node/Express app: test, tag, deploy to EC2 via SSH/PM2, rollback with atomic symlinks, and scheduled health checks. |
 | `github-actions-cicd-demo` | `github-actions-container-pipeline` | Node.js CI/CD lab using GitHub Actions matrix tests, ESLint, Trivy SARIF, Docker Buildx, GHCR publishing, and simulated staged deploys. |
-| `glpi-ticketing-system` | `docker-glpi-helpdesk-lab` | Dockerized GLPI helpdesk lab with MariaDB, persistent volumes, SLA categories, user roles, and asset workflow notes. |
+| `glpi-ticketing-system` | `docker-glpi-helpdesk-lab` | Docker Compose GLPI helpdesk lab with MariaDB, persistent volumes, internal networking, and ITSM workflow evidence. |
 | `devops-labs` | keep | Indexed DevOps lab portfolio covering Linux, AWS, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, and capstone infrastructure builds. |
 | `advanced-actions-demo` | archived; `github-actions-oidc-lab` only after fix | GitHub Actions workflow-pattern lab with reusable workflows, Node matrix tests, environment-gated deploys, and real AWS OIDC role assumption. |
 | `CommitVigil` | `commit-risk-webhook` only after rewrite | FastAPI webhook service that validates GitHub events, scans commit risk signals, queues background checks, and sends Slack alerts. |
@@ -388,6 +388,7 @@ Why this is better:
 
 Evidence to add:
 
+- Link the DEV implementation article from the profile README and repo README.
 - GLPI login/dashboard screenshot.
 - Asset inventory screenshot.
 - Sample P1/P2/P3 ticket screenshots.
