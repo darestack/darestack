@@ -15,6 +15,7 @@ The winning path is a small profile centered on:
 - clear project descriptions;
 - screenshots, workflow runs, logs, and measured outputs;
 - honest labels for labs and simulated deployments.
+- deletion or archiving of repos that do not directly support DevOps, IT systems, or backend infrastructure roles.
 
 ## Current Credibility Risks
 
@@ -80,12 +81,104 @@ For remote-only repos:
 
 Remote-only repos worth inspecting first:
 
-| Repo | Why |
+| Repo | Status | Why |
 |---|---|
-| `book-to-podcast-ai` | Has Railway deployment records, so it can serve as backend/app deployment proof after README cleanup |
-| `django-dynamic-app` | Needs inspection before deciding whether it is backend proof or archive material |
-| `policycraft-ai` | Needs inspection before deciding whether it has backend/deployment signal |
-| `jenkins-scm` | Either improve into a real Jenkins lab or hide/archive |
+| `book-to-podcast-ai` | IMPROVE | Has Railway deployment records, so it can serve as backend/app deployment proof after README cleanup |
+| `django-dynamic-app` | IMPROVE | Has Django, Docker, and Terraform/ECS material; useful only if described as a lab until deployment evidence is added |
+| `policycraft-ai` | IMPROVE LOW PRIORITY | Data-app export with broken hosted link; useful only if packaged as a reproducible Python/Dash project |
+| `jenkins-scm` | DELETE OR ARCHIVE | One README only, typo in description, no Jenkinsfile, no pipeline evidence |
+
+## Delete / Archive Queue
+
+Use this as the removal queue before touching GitHub settings. The goal is not to keep every learning artifact; the goal is to make the public profile look intentional.
+
+### Delete Now If You Do Not Need The History
+
+These are the clearest permanent-delete candidates because they are empty, tiny, duplicated, forked tutorial work, or old beginner training that does not increase interview probability.
+
+Empty or tiny practice repos:
+
+- `git_test`
+- `zero_day`
+- `m3l2_forking_lab`
+- `m4l1_managing_a_project`
+- `warp-dummy`
+- `jenkins-scm` unless it is rebuilt from scratch as a Jenkins pipeline lab
+
+Old beginner/course repos:
+
+- `alx-zero_day`
+- `alxPreCourse`
+- `alx-low_level_programming`
+- `DataStructure_and_Algo-Python`
+- `IntroToPython_Deitel`
+- `FSND_Udacity`
+- `LittleLemon`
+- `odin-recipes`
+- `playing-with-css-flexbox`
+- `sentiment_analyzer_flask`
+
+Forks and tutorial copies:
+
+- `30-Days-Of-JavaScript`
+- `ai-dev-tasks`
+- `build-your-own-x`
+- `css-exercises`
+- `example-voting-app`
+- `fullstack-ecommerce`
+- `gayolGate`
+- `gitops-argocd`
+- `holberton-system_engineering-devops`
+- `html-css-js-portfolio-tutorial-2`
+- `langchain`
+- `linux-basics-course`
+- `one-off-resources`
+- `portfolio-template`
+- `python-extensions-static-site-generator`
+- `python-static-site-generator`
+- `ruff`
+- `shell-scripting-for-beginners-course`
+- `wells-fargo-task-2`
+- `Your-First-Contribution`
+
+### Archive First, Delete Later If No Evidence Exists
+
+These may contain personal work, but they currently distract from the target roles unless they have deployments, tests, or infrastructure proof.
+
+- `agentproof`
+- `ai-startup-website`
+- `customer-service-chatbot`
+- `CustomerAgent`
+- `football-players-perfomance-analyses`
+- `gen_ai`
+- `image_detection`
+- `LangExpert`
+- `pic-gen`
+- `clinician`
+- `medicalrag`
+- `verimed`
+
+### Do Not Delete Yet
+
+These either support the current portfolio directly or may be useful after cleanup.
+
+- `darestack`
+- `api-reliability-suite`
+- `github-actions-ec2-pipeline`
+- `github-actions-cicd-demo`
+- `glpi-ticketing-system`
+- `devops-labs`
+- `advanced-actions-demo`
+- `book-to-podcast-ai`
+- `django-dynamic-app`
+- `policycraft-ai`
+- `CommitVigil`
+- `cloudcull`
+- `100-days-of-devops-xfusioncorp`
+- `warp-support-case-lab`
+- `greenwood-library-website`
+- `MarketPeak_Ecommerce`
+- `ecommerce-platform`
 
 ### KEEP
 
@@ -109,7 +202,7 @@ These may be useful later, but should not lead the profile today.
 | `CommitVigil` | README and code direction are not aligned; repo description is blank | Decide one product: GitHub risk webhook or commitment extractor. Delete or move unrelated agent/sales features |
 | `cloudcull` | Over-marketed and too broad for current proof | Rewrite as a dry-run cost audit CLI; remove multi-cloud/AI/kill-switch claims unless demonstrated |
 | `100-days-of-devops-xfusioncorp` | Curriculum repo can show consistency but is not high-signal enough to pin | Keep public, but link only from `devops-labs` if organized |
-| `jenkins-scm` | Title/description feels beginner-level | Either upgrade to a Jenkinsfile lab with screenshots or archive |
+| `jenkins-scm` | Title/description feels beginner-level and repo contains only a README | Delete/archive unless you want to rebuild a full Jenkinsfile lab |
 | `warp-support-case-lab` | Useful troubleshooting angle, but not central to DevOps hiring scan | Keep unpinned; add incident format, logs, root cause, resolution |
 | `book-to-podcast-ai` | App is outside the main DevOps track, but it has real Railway deployment records | Keep unpinned; reposition as backend/app deployment proof with Railway deployment dates, live URL, runtime config, and screenshots |
 | `medicalrag`, `verimed`, `clinician` | Backend/AI healthcare work may distract from DevOps unless deployed and documented | Move to backend section only if live, tested, and infrastructure is clear |
@@ -160,12 +253,10 @@ Low-alignment product experiments unless they have strong deployment evidence:
 - `ai-startup-website`
 - `customer-service-chatbot`
 - `CustomerAgent`
-- `django-dynamic-app`
 - `gen_ai`
 - `image_detection`
 - `LangExpert`
 - `pic-gen`
-- `policycraft-ai`
 - `agentproof`
 
 Already archived or safe to keep out of view:
