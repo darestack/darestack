@@ -26,7 +26,7 @@ The winning path is a small profile centered on:
 | `github-actions-ec2-pipeline` had thousands of duplicate open health-check issues | A health check that spams issues looks operationally unsafe, even if the pipeline idea is good | Deduplicate alert issue creation, reduce schedule noise, and close historical duplicate issues after GitHub API rate limit resets |
 | Several project READMEs use "production" language without production evidence | Senior reviewers look for deployment logs, uptime, runbooks, monitoring, and failure handling | Replace broad claims with exact implementation details and evidence |
 | `advanced-actions-demo` claims OIDC AWS deploy, but local workflow shows a placeholder deploy with `id-token: write` commented out | This is the kind of mismatch a technical screener notices quickly | Archived during cleanup; unarchive only after real OIDC evidence exists |
-| `github-actions-cicd-demo` README and workflow disagree | README says Node 12/14/16 and hard lint gate; workflow uses Node 18/20 and SARIF lint upload has `continue-on-error: true` | Update README to match workflow, or change workflow and prove it |
+| `github-actions-cicd-demo` used outdated Node runtime references | Earlier docs/workflow referenced EOL Node lines and did not wait for security scanning before build | Updated to Node 22/24, refreshed action versions, made build depend on security scan, and kept deploy stage explicitly simulated |
 | Too many public repos compete for attention | Recruiters scan pins and recent repos first; unrelated AI/product/course repos blur the DevOps story | Archive, private, or leave unpinned; do not link from profile README |
 
 ## Recommended Pinned Repositories
@@ -56,7 +56,7 @@ Use these descriptions in GitHub repository settings.
 |---|---|---|
 | `api-reliability-suite` | keep | FastAPI reliability reference with JWT auth, rate limiting, readiness checks, Prometheus/Grafana/Jaeger, circuit-breaker fallback, and tested LLM log triage. |
 | `github-actions-ec2-pipeline` | keep or `ec2-release-pipeline` | GitHub Actions pipeline for a Node/Express app: test, tag, deploy to EC2 via SSH/PM2, rollback with atomic symlinks, and scheduled health checks. |
-| `github-actions-cicd-demo` | `github-actions-container-pipeline` | Node.js CI/CD lab using GitHub Actions matrix tests, ESLint, Trivy SARIF, Docker Buildx, GHCR publishing, and simulated staged deploys. |
+| `github-actions-cicd-demo` | `github-actions-container-pipeline` | Node.js CI/CD lab using GitHub Actions matrix tests on Node 22/24, ESLint, Trivy SARIF, Docker Buildx, GHCR publishing, and simulated staged deploys. |
 | `glpi-ticketing-system` | `docker-glpi-helpdesk-lab` | Docker Compose GLPI helpdesk lab with MariaDB, persistent volumes, internal networking, and ITSM workflow evidence. |
 | `devops-labs` | keep | Indexed DevOps lab portfolio covering Linux, AWS, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, and capstone infrastructure builds. |
 | `advanced-actions-demo` | archived; `github-actions-oidc-lab` only after fix | GitHub Actions workflow-pattern lab with reusable workflows, Node matrix tests, environment-gated deploys, and real AWS OIDC role assumption. |
@@ -353,17 +353,18 @@ Evidence to add:
 
 Before:
 
-- README says Node 12/14/16, but workflow uses Node 18/20.
-- README implies hard lint gate, but the SARIF lint upload step has `continue-on-error: true`.
+- Earlier README/workflow references used EOL Node runtime lines.
+- Build job did not wait for the Trivy security scan.
+- Notification job referenced production deployment output without directly depending on the production job.
 - README says staged deploy, but workflow deploy steps are simulated.
 
 After:
 
-- "Node.js CI/CD lab using GitHub Actions matrix tests on Node 18/20, ESLint, Trivy SARIF, Docker Buildx, GHCR image publishing, and simulated staged deploy steps."
+- "Node.js CI/CD lab using GitHub Actions matrix tests on Node 22/24, ESLint, Trivy SARIF, Docker Buildx, GHCR image publishing, and simulated staged deploy steps."
 
 Why this is better:
 
-- It prevents a senior engineer from finding a mismatch between README and workflow.
+- It keeps the pinned CI/CD repo on supported runtime lines and prevents a senior engineer from finding a README/workflow mismatch.
 
 Evidence to add:
 
@@ -569,7 +570,7 @@ Do not stuff every keyword into every repo. Each pinned repo should own one capa
 1. Update profile README with the new hub copy.
 2. Pin only the recommended 5 repos.
 3. Add GitHub descriptions from the table above.
-4. Fix `github-actions-cicd-demo` README/workflow mismatch.
+4. Add workflow run screenshots and GHCR package links for `github-actions-cicd-demo`.
 5. Keep `advanced-actions-demo` archived until real OIDC evidence exists.
 6. Add screenshots to `api-reliability-suite`, `github-actions-ec2-pipeline`, and `glpi-ticketing-system`.
 7. Archive or hide the listed low-signal repos from the recruiter path.
