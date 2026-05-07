@@ -368,7 +368,8 @@ Why this is better:
 
 Evidence to add:
 
-- Actions run screenshot.
+- Workflow badge added; latest updated workflow run completed successfully on May 7, 2026.
+- Add a screenshot or saved link to the passing Actions run.
 - GHCR package link.
 - GitHub Code Scanning screenshot.
 - If deploying for real, replace simulation echoes with actual deploy commands and logs.
