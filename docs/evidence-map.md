@@ -40,5 +40,5 @@ This is the working map for the portfolio. The profile README stays short; this 
 The profile should stay centered on five pinned repos. Supporting public repos are fine when they are honestly framed as labs or prototypes:
 
 - `CommitVigil` and `cloudcull` should stay unpinned until their proof is stronger.
-- `django-dynamic-app`, `book-to-podcast-ai`, and `warp-support-case-lab` can stay public as supporting work, but they should not compete with the main DevOps pins.
+- `django-dynamic-app` and `warp-support-case-lab` can stay public as supporting work, but they should not compete with the main DevOps pins.
 - Archived companion repos are still linkable as history, but they should not be treated as headline projects until their evidence is refreshed.
