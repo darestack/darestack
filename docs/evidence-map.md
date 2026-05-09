@@ -9,7 +9,7 @@ This is the working map for the portfolio. The profile README stays short; this 
 | [api-reliability-suite](https://github.com/darestack/api-reliability-suite) | Passing [CI](https://github.com/darestack/api-reliability-suite/actions/runs/25492789987), [Security](https://github.com/darestack/api-reliability-suite/actions/runs/25492790028), and [Docs](https://github.com/darestack/api-reliability-suite/actions/runs/25492790000) runs; committed [Grafana dashboard](https://github.com/darestack/api-reliability-suite/blob/main/docs/assets/grafana-dashboard.png) and [AI-debug screenshot](https://github.com/darestack/api-reliability-suite/blob/main/docs/assets/ai-debug-screenshot.png) |
 | [github-actions-ec2-pipeline](https://github.com/darestack/github-actions-ec2-pipeline) | Passing [CI matrix run](https://github.com/darestack/github-actions-ec2-pipeline/actions/runs/25493804477), passing [scheduled health check](https://github.com/darestack/github-actions-ec2-pipeline/actions/runs/25594858992), controlled release workflow, and rollback script |
 | [github-actions-cicd-demo](https://github.com/darestack/github-actions-cicd-demo) | Passing [CI/CD workflow](https://github.com/darestack/github-actions-cicd-demo/actions/runs/25490869471) with Node 22/24 matrix, linting, Trivy SARIF upload, Docker Buildx, and GHCR publish path |
-| [glpi-ticketing-system](https://github.com/darestack/glpi-ticketing-system) | Docker Compose runtime, operations runbook, backup/restore/smoke-test scripts, and [implementation write-up](https://dev.to/darestack/from-zero-to-helpdesk-hero-building-an-enterprise-it-support-system-with-glpi-hpe) |
+| [glpi-ticketing-system](https://github.com/darestack/glpi-ticketing-system) | Docker Compose runtime, operations runbook, backup/restore/smoke-test scripts, [implementation write-up](https://dev.to/darestack/from-zero-to-helpdesk-hero-building-an-enterprise-it-support-system-with-glpi-hpe), and local smoke evidence: [login screen](evidence/glpi-login.png), [dashboard](evidence/glpi-dashboard.png), [run note](evidence/glpi-smoke-2026-05-09.md) |
 | [devops-labs](https://github.com/darestack/devops-labs) | Root evidence map, capstone write-ups, screenshots inside module folders, Terraform files, Ansible playbooks, and GitHub Actions workflow files |
 
 ## Capstone And Companion Repo Positioning
@@ -28,7 +28,7 @@ This is the working map for the portfolio. The profile README stays short; this 
 
 | Project | Next Proof To Add |
 |---|---|
-| `glpi-ticketing-system` | Add `docs/screenshots/` with GLPI dashboard, sample ticket, asset inventory, SLA/reporting view, and a smoke-test command output |
+| `glpi-ticketing-system` | Add sample ticket, asset inventory, SLA/reporting view, and screenshots inside the GLPI repo itself |
 | `github-actions-ec2-pipeline` | Capture EC2 `/api/health`, PM2 process status, and one rollback log with sensitive values hidden |
 | `devops-labs` | Add a root screenshot index with the strongest 6-8 images, plus AWS teardown/cost notes for the HA WordPress capstone |
 | `devops-labs` Capstone 6 | Promote Grafana/Gatus exports and sanitized Terraform plan/apply output into the capstone folder |
