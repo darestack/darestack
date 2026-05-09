@@ -17,7 +17,7 @@ This is the working map for the portfolio. The profile README stays short; this 
 | Work | Main Place To Review | Companion Repo | How To Position It |
 |---|---|---|---|
 | WordPress HA on AWS | [devops-labs Capstone 4](https://github.com/darestack/devops-labs/tree/main/Module-2/capstone-project-4) | None yet | Keep inside `devops-labs` until it is extracted as a focused `terraform-aws-wordpress-ha` or `aws-wordpress-ha-lab` repo with IaC and fresh screenshots |
-| E-commerce CI/CD | [devops-labs Capstone 5](https://github.com/darestack/devops-labs/tree/main/Module-3/capstone-project-5) | [ecommerce-platform](https://github.com/darestack/ecommerce-platform) | Treat as a companion app repo. It has a successful Docker Publish run, but CI needs fixing before it should be promoted |
+| E-commerce CI/CD | [devops-labs Capstone 5](https://github.com/darestack/devops-labs/tree/main/Module-3/capstone-project-5) | [ecommerce-platform](https://github.com/darestack/ecommerce-platform) | Treat as a companion app repo. It now has passing CI and Docker Publish evidence, but still needs current screenshots before it should be promoted |
 | EC2 release automation | [github-actions-ec2-pipeline](https://github.com/darestack/github-actions-ec2-pipeline) | Related devops-labs mini-project notes | This is polished enough to stay as a headline repo because the workflow, health check, and rollback story are easy to review |
 | Container CI/CD quality gates | [github-actions-cicd-demo](https://github.com/darestack/github-actions-cicd-demo) | Related devops-labs mini-project notes | Keep as a headline repo. It is clearer than burying the Actions work inside `devops-labs` |
 | MarketPeak EC2 deployment | [devops-labs Capstone 3](https://github.com/darestack/devops-labs/tree/main/Module-2/capstone-project-3) | [MarketPeak_Ecommerce](https://github.com/darestack/MarketPeak_Ecommerce) | Keep as historical/manual deployment evidence. Do not pin unless it gets a clean README, current screenshots, and a reproducible setup |
@@ -32,7 +32,7 @@ This is the working map for the portfolio. The profile README stays short; this 
 | `github-actions-ec2-pipeline` | Capture EC2 `/api/health`, PM2 process status, and one rollback log with sensitive values hidden |
 | `devops-labs` | Add a root screenshot index with the strongest 6-8 images, plus AWS teardown/cost notes for the HA WordPress capstone |
 | `devops-labs` Capstone 6 | Promote Grafana/Gatus exports and sanitized Terraform plan/apply output into the capstone folder |
-| `ecommerce-platform` | Fix the failing CI workflow before unarchiving or promoting; keep the successful Docker Publish run as partial evidence |
+| `ecommerce-platform` | Add current app screenshots and deployment logs before treating it as a headline repo |
 | `django-dynamic-app` | Add Terraform plan/apply evidence, ECS task screenshot, ALB response screenshot, and CloudWatch log screenshot |
 
 ## Public Repo Cleanup Notes
