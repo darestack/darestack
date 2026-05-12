@@ -1,6 +1,6 @@
 # Adeleke Dare | DevOps & Infrastructure Engineer
 
-Lagos, Nigeria | [LinkedIn](https://www.linkedin.com/in/darestack/) | [Blog](https://dev.to/darestack) | [Email](mailto:adelekedare2012@gmail.com)
+Lagos, Nigeria | LinkedIn: linkedin.com/in/darestack | Blog: dev.to/darestack | Email: adelekedare2012@gmail.com
 
 I work on the practical side of backend and infrastructure: getting services deployed, watched, recovered, and documented well enough that another engineer can understand what is going on.
 
